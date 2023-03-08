@@ -4,19 +4,20 @@ LABEL maintainer = "bhargavi"
 
 # Any working directory can be chosen as per choice like '/' or '/home' etc
 # i have chosen /usr/app/src
-WORKDIR  D:\work_projects\
+WORKDIR  D:\work_projects\playwright_demo\test_cases
+
 # WORKDIR  /usr/app/src
 
 #to COPY the remote file at working directory in container
 # ADD  
-
+COPY  test_keyboardactions.py ./
 # Now the structure looks like this '/usr/app/src/test.py'
 
 # RUN pip install --no-cache-dir -f file.txt
 # RUN pip install python
 RUN pip install pytest
 
-COPY . . 
+# COPY . . 
 
 
 #CMD instruction should be used to run the software
@@ -25,4 +26,4 @@ EXPOSE  50000
 
 EXPOSE  8080
 
-CMD [ "pytest", "start"]
+CMD [ "pytest", "test_keyboardactions"]
